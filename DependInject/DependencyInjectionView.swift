@@ -16,8 +16,11 @@ struct DependencyInjectionModel: Identifiable, Codable {
 }
 
 class DependencyInjectionDataService {
+    let url: URL
     
-    let url: URL = URL(string: "https://jsonplaceholder.typicode.com/posts")!
+    init(url: URL) {
+        self.url = url
+    }
     
     func getData() -> AnyPublisher<[DependencyInjectionModel], Error> {
         URLSession.shared.dataTaskPublisher(for: url)
@@ -71,7 +74,7 @@ struct DependencyInjectionView: View {
 }
 
 struct DependencyInjectionView_Previews: PreviewProvider {
-    static let dataService = DependencyInjectionDataService()
+    static let dataService = DependencyInjectionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
     
     static var previews: some View {
         DependencyInjectionView(dataService: dataService)
