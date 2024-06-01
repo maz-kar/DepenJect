@@ -15,7 +15,7 @@ struct DependencyInjectionModel: Identifiable, Codable {
     let body: String
 }
 
-class DependencyInjectionDataService {
+class ProductionDataService {
     let url: URL
     
     init(url: URL) {
@@ -31,14 +31,18 @@ class DependencyInjectionDataService {
     }
 }
 
+class MockDataService {
+    
+}
+
 class DependencyInjectionViewModel: ObservableObject {
     
     var cancellables = Set<AnyCancellable>()
-    let dataService: DependencyInjectionDataService
+    let dataService: ProductionDataService
     
     @Published var posts: [DependencyInjectionModel] = []
     
-    init(dataService: DependencyInjectionDataService) {
+    init(dataService: ProductionDataService) {
         self.dataService = dataService
         loadData()
     }
@@ -58,7 +62,7 @@ struct DependencyInjectionView: View {
     
     @StateObject private var viewModel: DependencyInjectionViewModel
     
-    init(dataService: DependencyInjectionDataService) {
+    init(dataService: ProductionDataService) {
         _viewModel = StateObject(wrappedValue: DependencyInjectionViewModel(dataService: dataService))
     }
     
@@ -74,7 +78,7 @@ struct DependencyInjectionView: View {
 }
 
 struct DependencyInjectionView_Previews: PreviewProvider {
-    static let dataService = DependencyInjectionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+    static let dataService = ProductionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
     
     static var previews: some View {
         DependencyInjectionView(dataService: dataService)
