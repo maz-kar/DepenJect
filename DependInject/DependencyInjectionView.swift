@@ -52,11 +52,11 @@ class MockDataService: DataServiceProtocol {
 class DependencyInjectionViewModel: ObservableObject {
     
     var cancellables = Set<AnyCancellable>()
-    let dataService: ProductionDataService
+    let dataService: DataServiceProtocol
     
     @Published var posts: [PostsModel] = []
     
-    init(dataService: ProductionDataService) {
+    init(dataService: DataServiceProtocol) {
         self.dataService = dataService
         loadData()
     }
@@ -76,7 +76,7 @@ struct DependencyInjectionView: View {
     
     @StateObject private var viewModel: DependencyInjectionViewModel
     
-    init(dataService: ProductionDataService) {
+    init(dataService: DataServiceProtocol) {
         _viewModel = StateObject(wrappedValue: DependencyInjectionViewModel(dataService: dataService))
     }
     
@@ -92,7 +92,10 @@ struct DependencyInjectionView: View {
 }
 
 struct DependencyInjectionView_Previews: PreviewProvider {
-    static let dataService = ProductionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+    //static let dataService = ProductionDataService(url: URL(string: "https://jsonplaceholder.typicode.com/posts")!)
+    
+    static let dataService = MockDataService()
+    
     
     static var previews: some View {
         DependencyInjectionView(dataService: dataService)
