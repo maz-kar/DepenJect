@@ -15,6 +15,7 @@
 		6B6871CC2C0B7336003F096F /* DependInjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871CB2C0B7336003F096F /* DependInjectUITests.swift */; };
 		6B6871CE2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871CD2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift */; };
 		6B6871DB2C0B73C6003F096F /* DependencyInjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871DA2C0B73C6003F096F /* DependencyInjectionView.swift */; };
+		6B6871DD2C0B7B54003F096F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6B6871DC2C0B7B54003F096F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		6B6871CB2C0B7336003F096F /* DependInjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependInjectUITests.swift; sourceTree = "<group>"; };
 		6B6871CD2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependInjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6B6871DA2C0B73C6003F096F /* DependencyInjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionView.swift; sourceTree = "<group>"; };
+		6B6871DC2C0B7B54003F096F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		6B6871A42C0B7334003F096F = {
 			isa = PBXGroup;
 			children = (
+				6B6871DC2C0B7B54003F096F /* README.md */,
 				6B6871AF2C0B7334003F096F /* DependInject */,
 				6B6871C02C0B7336003F096F /* DependInjectTests */,
 				6B6871CA2C0B7336003F096F /* DependInjectUITests */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B6871DD2C0B7B54003F096F /* README.md in Resources */,
 				6B6871B82C0B7336003F096F /* Preview Assets.xcassets in Resources */,
 				6B6871B52C0B7336003F096F /* Assets.xcassets in Resources */,
 			);
