@@ -8,30 +8,44 @@
 import SwiftUI
 import Combine
 
-struct DependencyInjectionModel: Identifiable, Codable {
+struct PostsModel: Identifiable, Codable {
     let userId: Int
     let id: Int
     let title: String
     let body: String
 }
 
-class ProductionDataService {
+protocol DataServiceProtocol {
+    func getData() -> AnyPublisher<[PostsModel], Error>
+}
+
+class ProductionDataService: DataServiceProtocol {
     let url: URL
     
     init(url: URL) {
         self.url = url
     }
     
-    func getData() -> AnyPublisher<[DependencyInjectionModel], Error> {
+    func getData() -> AnyPublisher<[PostsModel], Error> {
         URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
-            .decode(type: [DependencyInjectionModel].self, decoder: JSONDecoder())
+            .decode(type: [PostsModel].self, decoder: JSONDecoder())
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
 }
 
-class MockDataService {
+class MockDataService: DataServiceProtocol {
+    
+    let testData: [PostsModel] = [
+        PostsModel(userId: 1, id: 1, title: "One", body: "one"),
+        PostsModel(userId: 2, id: 2, title: "Two", body: "two")
+    ]
+    
+    func getData() -> AnyPublisher<[PostsModel], any Error> {
+        
+    }
+    
     
 }
 
@@ -40,7 +54,7 @@ class DependencyInjectionViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
     let dataService: ProductionDataService
     
-    @Published var posts: [DependencyInjectionModel] = []
+    @Published var posts: [PostsModel] = []
     
     init(dataService: ProductionDataService) {
         self.dataService = dataService

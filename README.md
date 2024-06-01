@@ -18,5 +18,5 @@ Singleton issues:
 Dependency Injection can fix the above issues:
 1. The only classes that have access to our service will be ones that we are injection our service to them.
 2. It was by customising the init of our service in our Preview.
-3. By introducing protocol, we can fix the issue and swap between ProductionDataService and MockDataService
+3. By introducing protocol, we can fix the issue and swap between ProductionDataService and MockDataService.
  
