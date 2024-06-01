@@ -42,11 +42,11 @@ class MockDataService: DataServiceProtocol {
         PostsModel(userId: 2, id: 2, title: "Two", body: "two")
     ]
     
-    func getData() -> AnyPublisher<[PostsModel], any Error> {
-        
+    func getData() -> AnyPublisher<[PostsModel], Error> {
+        Just(testData)
+            .tryMap { $0 }
+            .eraseToAnyPublisher()
     }
-    
-    
 }
 
 class DependencyInjectionViewModel: ObservableObject {
