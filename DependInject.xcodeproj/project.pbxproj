@@ -14,6 +14,7 @@
 		6B6871C22C0B7336003F096F /* DependInjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871C12C0B7336003F096F /* DependInjectTests.swift */; };
 		6B6871CC2C0B7336003F096F /* DependInjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871CB2C0B7336003F096F /* DependInjectUITests.swift */; };
 		6B6871CE2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871CD2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift */; };
+		6B6871DB2C0B73C6003F096F /* DependencyInjectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6871DA2C0B73C6003F096F /* DependencyInjectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		6B6871C72C0B7336003F096F /* DependInjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DependInjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6871CB2C0B7336003F096F /* DependInjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependInjectUITests.swift; sourceTree = "<group>"; };
 		6B6871CD2C0B7336003F096F /* DependInjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependInjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6B6871DA2C0B73C6003F096F /* DependencyInjectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				6B6871B22C0B7334003F096F /* ContentView.swift */,
 				6B6871B42C0B7336003F096F /* Assets.xcassets */,
 				6B6871B62C0B7336003F096F /* Preview Content */,
+				6B6871DA2C0B73C6003F096F /* DependencyInjectionView.swift */,
 			);
 			path = DependInject;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B6871B32C0B7334003F096F /* ContentView.swift in Sources */,
+				6B6871DB2C0B73C6003F096F /* DependencyInjectionView.swift in Sources */,
 				6B6871B12C0B7334003F096F /* DependInjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
