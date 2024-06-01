@@ -43,8 +43,8 @@ class DependencyInjectionViewModel: ObservableObject {
         DependencyInjectionDataService.instance.getData()
             .sink { _ in
                 
-            } receiveValue: { returnedData in
-                self.posts = returnedData
+            } receiveValue: { [weak self] returnedData in
+                self?.posts = returnedData
             }
             .store(in: &cancellables)
     }
